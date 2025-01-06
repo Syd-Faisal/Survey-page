@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <title>Survey Form</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .survey {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            padding: 30px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #title {
+            font-size: 36px;
+            color: #333;
+        }
+
+        #description {
+            font-size: 18px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .fg {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 15px;
+        }
+
+
+        #submit,
+        #reset {
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+
+        #submit:hover,#reset:hover {
+            background-color: #0056b3;
+        }
+
+        #submit:active,#reset:active {
+            background-color: #000000;
+        }
+
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        input:invalid,
+        textarea:invalid,
+        select:invalid {
+            border-color: #e74c3c;
+        }
+
+        input:valid,
+        textarea:valid,
+        select:valid {
+            border-color: #2ecc71;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">
+        <h1 id="title">Survey Form</h1>
+        <p id="description">Tell us about yourself!</p>
+    </div>
+    <div class="survey">
+        <form id="survey-form" method="post">
+            <div class="fg">
+                <label id="name-label" for="name">Name: </label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="fg">
+                <label id="email-label" for="email">Email: </label>
+                <input type="email" id="email" placeholder="example@gmail.com" required>
+            </div>
+            <div class="fg">
+                <label for="number" id="number-label">Age: </label>
+                <input type="number" id="number" min="13" max="100" placeholder="Enter your age" required>
+            </div>
+            <div class="fg">
+                <label for="dropdown">What describes you the best: </label>
+                <select id="dropdown" required>
+                    <option value="">Select your option</option>
+                    <option value="1">Introvert</option>
+                    <option value="2">Extrovert</option>
+                    <option value="3">Ambivert</option>
+                </select>
+            </div>
+            <div class="fg">
+                <label>Gender: </label>
+                <label><input type="radio" value="male" name="gender" checked required> Male</label>
+                <label><input type="radio" value="female" name="gender" required> Female</label>
+            </div>
+            <div class="fg">
+                <label>What are your hobbies: </label>
+                <label><input type="checkbox" value="Reading"> Reading</label>
+                <label><input type="checkbox" value="Sports"> Sports</label>
+                <label><input type="checkbox" value="Travelling"> Travelling</label>
+                <label><input type="checkbox" value="Cooking"> Cooking</label>
+            </div>
+            <div class="fg">
+                <label for="comment">Add comment or thought: </label>
+                <textarea id="comment" rows="3" cols="30" placeholder="Enter here..." maxlength="100"
+                    required></textarea>
+            </div>
+            <input type="submit" value="Submit" id="submit">
+            <input type="reset" value="Reset" id="reset">
+        </form>
+    </div>
+</body>
+
+</html>
